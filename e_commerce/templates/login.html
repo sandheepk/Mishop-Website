@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+  <section class="h-100 bg-light">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card card-registration my-4">
+            <div class="row g-0">
+              <div class="col-xl-6 d-none d-xl-block">
+                <img src="{% static 'images/login.jpg' %}" alt="Sample photo" class="img-fluid" style="border-top-left-radius: .25remrem; border-bottom-left-radius: .25remrem;" />
+              </div>
+              <div class="col-xl-6">
+                <div class="card-body p-md-5 text-black">
+                  <h3 class="mb-5 text-uppercase" style="color:#32758a;">Login Here</h3>
+
+                  <form action="login" method="post">
+                    {% csrf_token %}
+
+                  <div class="form-outline mb-4">
+                    <input type="text" id="form3Example97" class="form-control form-control-lg" name="username" />
+                    <label class="form-label" for="form3Example97" style="color:#32758a;">UserName</label>
+                  </div>
+                  
+                  <div class="form-outline mb-4">
+                    <input type="password" id="form3Example97" class="form-control form-control-lg" name="password" />
+                    <label class="form-label" for="form3Example97" style="color:#32758a;">Password</label>
+                  </div>
+                  
+                  <div class="text-center pt-1 mb-5 pb-1">
+                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit" style="color:black;">Login</button>
+                    <a class="text-muted" href="#!" style="color:#32758a;">Forgot password?</a>
+                  </div>
+
+                </form>
+
+                  </div>
+                    <p class="mb-5 pb-lg-2" style="color: #32758a;">Don't have an account? <a href="{% url 'signup' %}"style="color:#32758a;" >Register here</a></p>
+                  <a href="#!" class="small text-muted">Terms of use.</a>
+                  <a href="#!" class="small text-muted">Privacy policy</a>
+
+                  
+                    
+
+                </div> 
+            
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

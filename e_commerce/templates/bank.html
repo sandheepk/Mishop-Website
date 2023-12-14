@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+  <div class="hero-wrap hero-bread" style="background-image: url({% static 'images/bg_6.jpg' %});">
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-center justify-content-center">
+        <div class="col-md-9 ftco-animate text-center">
+          <h1 class="mb-0 bread">Checkout</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="p-4 p-md-5"
+    style="background-image: url(https://www.freepik.com/free-photo/background_3012025.htm#query=white%20color&position=1&from_view=keyword&track=ais);">
+
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-5">
+        <div class="card rounded-3">
+          <div class="card-body p-4">
+            <div class="text-center mb-4">
+              <h3>Payment Page</h3>
+            </div>
+            <form action="bank" method="post">
+
+              <div class="form-outline mb-4">
+                <input type="text" id="formControlLgXsd" class="form-control form-control-lg" name="name" />
+                <label class="form-label" for="formControlLgXsd">Cardholder's Name</label>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col-7">
+                  <div class="form-outline">
+                    <input type="text" id="formControlLgXM" class="form-control form-control-lg" name="account_number" />
+                    <label class="form-label" for="formControlLgXM">Account Number</label>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="form-outline">
+                    <input type="text" id="formControlLgExpk" class="form-control form-control-lg" placeholder="MM/YYYY"
+                      name="expiry_month" />
+                    <label class="form-label" for="formControlLgExpk">Expire</label>
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="form-outline">
+                    <input type="password" id="formControlLgcvv" class="form-control form-control-lg" placeholder="Cvv"
+                      name="cvv" />
+                    <label class="form-label" for="formControlLgcvv">Cvv</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row justify-content-start">
+                <div class="col col-lg-5 col-md-6 mt-5 cart-wrap ftco-animate">
+                  <p class="text-center"><a href="{% url 'paymenthandler' %}" class="btn btn-primary py-3 px-4">Place Order</a></p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+{% endblock %}
